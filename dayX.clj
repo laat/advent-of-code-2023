@@ -1,20 +1,15 @@
-(ns dayX)
-(require '[aocd.core :as data]
-         ;;'[clojure.string :as str]
-         ;;'[clojure.set :as set]
-         ;;'[clojure.core.match :refer [match]
-         ;;'[clojure.math :as math]
-         )
-(defn part1 [input]
-  input)
+(ns dayX
+  (:require
+   [aocd.core :as data]
+   [clojure.string :as str]))
 
-(defn part2 [input]
-  input)
+(def input (data/input 2022 1))
+(def example "")
 
-(def example "a")
+;; part1
+(->> example
+     str/split-lines)
 
-(part1 example)
-(part1 (data/input 2022 1))
-
-(part2 example)
-(part2 (data/input 2022 1))
+;; part2
+(->> example
+     str/split-lines)
