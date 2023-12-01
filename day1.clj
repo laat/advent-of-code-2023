@@ -3,13 +3,6 @@
    [aocd.core :as data]
    [clojure.string :as str]))
 
-(def example "two1nine
-eightwothree
-abcone2threexyz
-xtwone3four
-4nineeightseven2
-zoneight234
-7pqrstsixteen")
 (def input (data/input 2023 1))
 
 ;; part1
@@ -17,7 +10,7 @@ zoneight234
      str/split-lines
      (map (partial re-seq #"\d"))
      (map (partial map parse-long))
-     (map (fn [xs] (+ (* (first xs) 10) (last xs))))
+     (map #(+ (* (first %) 10) (last %)))
      (reduce +))
 
 
@@ -30,5 +23,5 @@ zoneight234
      (map (partial re-seq #"(?=(one|two|three|four|five|six|seven|eight|nine|[0-9]))"))
      (map (partial map second))
      (map (partial map numbers))
-     (map (fn [xs] (+ (* (first xs) 10) (last xs))))
+     (map #(+ (* (first %) 10) (last %)))
      (reduce +))
