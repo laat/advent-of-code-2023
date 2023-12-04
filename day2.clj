@@ -12,7 +12,6 @@
 
 (defn parse-line [index line]
   (->> (str/split (second (str/split line #": ")) #"; ")
-       ;; (map #(str/split % #", "))
        (mapv parse-cubes)
        (assoc {:game (+ index 1)} :bags)))
 
